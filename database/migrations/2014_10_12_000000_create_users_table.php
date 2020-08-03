@@ -21,10 +21,12 @@ class CreateUsersTable extends Migration
             $table->string('username')->unique();
 
             $table->string('email')->unique();
-            $table->integer('idEstado');
-            $table->integer('idTipoUsuario');
+            $table->unsignedBigInteger('idEstado');
+            $table->unsignedBigInteger('idTipoUsuario');
 
-            // $table->foreign('i')
+            $table->foreign('idEstado')->references('idEstado')->on('estados');
+            $table->foreign('idTipoUsuario')->references('idTipoUsuario')->on('tipoUsuario');
+
 
             $table->timestamp('fechaDesactivado');
 

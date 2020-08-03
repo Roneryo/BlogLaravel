@@ -27,7 +27,6 @@ class Publicaciones extends Migration
             $table->foreign('idUsuario')->references('idUsuario')->on('usuarios');
             $table->foreign('idEstado')->references('idEstado')->on('estados');
             $table->foreign('idComentario')->references('idComentario')->on('comentarios');
-            // $table->foreign('publicacion_id')->references('id')->on('usuarios');
         });
     }
 

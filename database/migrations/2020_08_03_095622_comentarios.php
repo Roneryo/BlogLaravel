@@ -22,10 +22,10 @@ class Comentarios extends Migration
             $table->unsignedBigInteger('idEstado');
 
             $table->foreign('Usuario')->references('idUsuario')->on('usuarios');
-            // $table->foreign('idPublicacion')->references('idPublicacion')->on('publicaciones');
-            $table->foreign('idEstado')->references('idEstado')->on('estados');
 
-            // $table->foreign('idComentario')->references('idEstado')->on('estados');
+            // $table->foreign('idPublicacion')->references('idPublicacion')->on('publicaciones');
+
+            $table->foreign('idEstado')->references('idEstado')->on('estados');
 
             $table->timestamps();
         });
