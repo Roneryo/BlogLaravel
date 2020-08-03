@@ -21,12 +21,10 @@ class Publicaciones extends Migration
             $table->timestamps();
 
             $table->unsignedBigInteger('idUsuario');
-            $table->unsignedBigInteger('idComentario');
             $table->unsignedBigInteger('idEstado');
 
             $table->foreign('idUsuario')->references('idUsuario')->on('usuarios');
             $table->foreign('idEstado')->references('idEstado')->on('estados');
-            $table->foreign('idComentario')->references('idComentario')->on('comentarios');
         });
     }
 

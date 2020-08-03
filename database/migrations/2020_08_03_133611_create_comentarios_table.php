@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Comentarios extends Migration
+class CreateComentariosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -23,7 +23,7 @@ class Comentarios extends Migration
 
             $table->foreign('Usuario')->references('idUsuario')->on('usuarios');
 
-            // $table->foreign('idPublicacion')->references('idPublicacion')->on('publicaciones');
+            $table->foreign('idPublicacion')->references('idPublicacion')->on('publicaciones');
 
             $table->foreign('idEstado')->references('idEstado')->on('estados');
 
