@@ -14,8 +14,7 @@ class Publicaciones extends Migration
     public function up()
     {
         Schema::create('publicaciones', function (Blueprint $table) {
-            $table->id('idPublicacion');
-
+            $table->id('idPublicacion')->autoIncrement();
             $table->string('titulo');
             $table->string('contenido');
             $table->timestamps();
@@ -23,7 +22,7 @@ class Publicaciones extends Migration
             $table->unsignedBigInteger('idUsuario');
             $table->unsignedBigInteger('idEstado');
 
-            $table->foreign('idUsuario')->references('idUsuario')->on('usuarios');
+            $table->foreign('idUsuario')->references('id')->on('users');
             $table->foreign('idEstado')->references('idEstado')->on('estados');
         });
     }

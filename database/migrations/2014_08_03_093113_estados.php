@@ -14,11 +14,8 @@ class Estados extends Migration
     public function up()
     {
         Schema::create('estados', function (Blueprint $table) {
-            $table->id('idEstado');
-            $table->string('description');
-
-            // $table->foreign('idEstado')->references('idEstado')->on('usuarios');
-            // $table->timestamps();
+            $table->id('idEstado')->autoIncrement();
+            $table->string('descripcion');
         });
     }
 
