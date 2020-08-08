@@ -77,9 +77,9 @@ class PublicacionesController extends Controller
 
     public function comments($id){
         // $postInfo = Publicaciones::find($id);
-        $postComments = Comentarios::where('idPublicacion',$id);
-        // dd($postComments);
+        $postComments = Comentarios::where('idPublicacion',$id)->get();
+        echo $postComments;
 
-        return $postComments ;
+        // return $postComments ;
     }
 }
