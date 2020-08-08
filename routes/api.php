@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +29,9 @@ use Illuminate\Support\Facades\Route;
     Route::put('/posts/{id}','PublicacionesController@update');
     Route::get('/posts/{id}','PublicacionesController@show');
     Route::put('/posts/{id}/disable','PublicacionesController@disable');
+    //Comentarios asociados con la publicacion
+    Route::get('/posts/{id}/comments','PublicacionesController@comments');
+
     //Ruta de comentarios
     Route::get('/comments','ComentariosController@index');
     Route::post('/comments','ComentariosController@store');

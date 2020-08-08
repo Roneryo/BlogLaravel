@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Comentarios;
 use App\Publicaciones;
 use Illuminate\Http\Request;
 
@@ -66,5 +67,19 @@ class PublicacionesController extends Controller
         $disabledPost->idEstado=2;
         $disabledPost->save();
         return $disabledPost;
+    }
+     /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Publicaciones  $publicaciones
+     * @return \Illuminate\Http\Response
+     */
+
+    public function comments($id){
+        // $postInfo = Publicaciones::find($id);
+        $postComments = Comentarios::where('idPublicacion',$id);
+        // dd($postComments);
+
+        return $postComments ;
     }
 }
