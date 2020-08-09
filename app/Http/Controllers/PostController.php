@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Comentarios;
+use App\Comment;
+use App\Post;
 use Illuminate\Http\Request;
 
-class ComentariosController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,7 @@ class ComentariosController extends Controller
      */
     public function index()
     {
-        return Comentarios::all();
+        return Post::all();
     }
 
     /**
@@ -25,7 +26,7 @@ class ComentariosController extends Controller
      */
     public function store(Request $request)
     {
-        return Comentarios::create($request->all());
+        return Post::create($request->all());
     }
 
     /**
@@ -36,8 +37,8 @@ class ComentariosController extends Controller
      */
     public function show($id)
     {
-        $comentario = Comentarios::findOrFail($id);
-        return $comentario;
+        $publicacion = Post::findOrFail($id);
+        return $publicacion;
     }
 
     /**
@@ -49,22 +50,39 @@ class ComentariosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $newComment = Comentarios::findOrFail($id);
-        $newComment->update($request->all());
-        return $newComment;
+        $newPost = Post::findOrFail($id);
+        $newPost->update($request->all());
+        return $newPost;
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Comentarios  $Comentarios
+     * @param  \App\Post  $publicaciones
      * @return \Illuminate\Http\Response
      */
     public function disable($id)
     {
-        $disabledComment = Comentarios::find($id);
-        $disabledComment->idEstado=2;
-        $disabledComment->save();
-        return $disabledComment;
+        $disabledPost = Post::find($id);
+        $disabledPost->idEstado=2;
+        $disabledPost->save();
+        return $disabledPost;
+    }
+     /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Post  $post
+     * @return \Illuminate\Http\Response
+     */
+
+    public function comments($id){
+        // $postInfo = Post::find($id);
+        // $postComments = Comment::where('idPublicacion',$id)->get();
+        // echo $postComments;
+        $comments = Post::find($id)->comentarios;
+        return ($comments);
+        // dd($comments);
+        // count($comments);
+        // return $postComments ;
     }
 }

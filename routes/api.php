@@ -24,17 +24,17 @@ use Illuminate\Support\Facades\Route;
     Route::get('/users/{id}','UserController@show')->where(array('id'=>'[1-9]'));
     Route::put('/users/{id}/disable','UserController@inactive')->where(array('id'=>'[1-9]'));
     //Ruta de publicaciones
-    Route::get('/posts','PublicacionesController@index');
-    Route::post('/posts','PublicacionesController@store');
-    Route::put('/posts/{id}','PublicacionesController@update');
-    Route::get('/posts/{id}','PublicacionesController@show');
-    Route::put('/posts/{id}/disable','PublicacionesController@disable');
+    Route::get('/posts','PostController@index');
+    Route::post('/posts','PostController@store');
+    Route::put('/posts/{id}','PostController@update');
+    Route::get('/posts/{id}','PostController@show');
+    Route::put('/posts/{id}/disable','PostController@disable');
     //Comentarios asociados con la publicacion
-    Route::get('/posts/{id}/comments','PublicacionesController@comments');
+    Route::get('/posts/{id}/comments','PostController@comments');
 
     //Ruta de comentarios
-    Route::get('/comments','ComentariosController@index');
-    Route::post('/comments','ComentariosController@store');
-    Route::put('/comments/{id}','ComentariosController@update');
-    Route::get('/comments/{id}','ComentariosController@show');
-    Route::put('/comments/{id}/disable','ComentariosController@disable');
+    Route::get('/comments','CommentController@index');
+    Route::post('/comments','CommentController@store');
+    Route::put('/comments/{id}','CommentController@update');
+    Route::get('/comments/{id}','CommentController@show');
+    Route::put('/comments/{id}/disable','CommentController@disable');

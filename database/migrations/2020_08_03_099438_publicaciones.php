@@ -13,7 +13,7 @@ class Publicaciones extends Migration
      */
     public function up()
     {
-        Schema::create('publicaciones', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->string('titulo');
             $table->string('contenido');
@@ -34,6 +34,6 @@ class Publicaciones extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('publicaciones');
+        Schema::dropIfExists('posts');
     }
 }

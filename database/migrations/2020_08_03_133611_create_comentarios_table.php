@@ -13,16 +13,16 @@ class CreateComentariosTable extends Migration
      */
     public function up()
     {
-        Schema::create('comentarios', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->text('comentario');
 
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->unsignedBigInteger('publicaciones_id')->nullable();
+            $table->unsignedBigInteger('post_id')->nullable();
             $table->unsignedBigInteger('estado_id')->nullable();
 
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('publicaciones_id')->references('id')->on('publicaciones');
+            $table->foreign('post_id')->references('id')->on('posts');
             $table->foreign('estado_id')->references('id')->on('estados');
 
             $table->timestamps();
@@ -36,6 +36,6 @@ class CreateComentariosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comentarios');
+        Schema::dropIfExists('comments');
     }
 }

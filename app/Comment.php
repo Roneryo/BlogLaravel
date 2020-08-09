@@ -4,17 +4,17 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Publicaciones extends Model
+class Comment extends Model
 {
-    // protected $primaryKey = 'idPublicacion';
+    // protected $primaryKey = 'idComentario';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'titulo','contenido',
-        'idUsuario','idEstado',
+        'contenido',
+        'users_id','estado_id','post_id'
     ];
 
     /**
@@ -32,8 +32,5 @@ class Publicaciones extends Model
     protected $casts = [
         'created_at' => 'datetime',
     ];
-    public function comentarios()
-    {
-        return $this->hasMany('App\Comentarios');
-    }
+
 }
