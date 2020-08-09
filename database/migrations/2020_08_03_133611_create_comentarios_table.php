@@ -22,8 +22,8 @@ class CreateComentariosTable extends Migration
             $table->unsignedBigInteger('idEstado')->nullable();
 
             $table->foreign('idUsuario')->references('id')->on('users');
-            $table->foreign('idPublicacion')->references('idPublicacion')->on('publicaciones');
-            $table->foreign('idEstado')->references('idEstado')->on('estados');
+            $table->foreign('idPublicacion')->references('id')->on('publicaciones');
+            $table->foreign('idEstado')->references('id')->on('estados');
 
             $table->timestamps();
         });

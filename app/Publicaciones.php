@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Publicaciones extends Model
 {
-    protected $primaryKey = 'idPublicacion';
+    // protected $primaryKey = 'idPublicacion';
     /**
      * The attributes that are mass assignable.
      *
@@ -32,4 +32,8 @@ class Publicaciones extends Model
     protected $casts = [
         'created_at' => 'datetime',
     ];
+    public function comentarios()
+    {
+        return $this->hasMany('App\Comentarios');
+    }
 }
