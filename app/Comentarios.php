@@ -32,9 +32,5 @@ class Comentarios extends Model
     protected $casts = [
         'created_at' => 'datetime',
     ];
-    public function publicaciones()
-    {
-        return $this->belongsTo('App\Publicaciones');
-    }
 
 }

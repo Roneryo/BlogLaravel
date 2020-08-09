@@ -14,16 +14,16 @@ class CreateComentariosTable extends Migration
     public function up()
     {
         Schema::create('comentarios', function (Blueprint $table) {
-            $table->id('idComentario')->autoIncrement();
+            $table->id()->autoIncrement();
             $table->text('comentario');
 
-            $table->unsignedBigInteger('idUsuario')->nullable();
-            $table->unsignedBigInteger('idPublicacion')->nullable();
-            $table->unsignedBigInteger('idEstado')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->unsignedBigInteger('publicaciones_id')->nullable();
+            $table->unsignedBigInteger('estado_id')->nullable();
 
-            $table->foreign('idUsuario')->references('id')->on('users');
-            $table->foreign('idPublicacion')->references('id')->on('publicaciones');
-            $table->foreign('idEstado')->references('id')->on('estados');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('publicaciones_id')->references('id')->on('publicaciones');
+            $table->foreign('estado_id')->references('id')->on('estados');
 
             $table->timestamps();
         });

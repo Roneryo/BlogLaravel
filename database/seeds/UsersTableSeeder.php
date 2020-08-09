@@ -25,8 +25,8 @@ class UsersTableSeeder extends Seeder
             'apellido'=>'ortega',
             'password'=>'mercado2',
             'email'=>'roner.ortega@gmail.com',
-            'idTipoUsuario'=>'1',
-            'idEstado'=>'1',
+            'tipousuario_id'=>'1',
+            'estado_id'=>'1',
             'username'=>'rotd'
         ]);
         factory(User::class,10)->create();

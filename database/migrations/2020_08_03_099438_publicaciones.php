@@ -19,11 +19,11 @@ class Publicaciones extends Migration
             $table->string('contenido');
             $table->timestamps();
 
-            $table->unsignedBigInteger('idUsuario');
-            $table->unsignedBigInteger('idEstado');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('estado_id');
 
-            $table->foreign('idUsuario')->references('id')->on('users');
-            $table->foreign('idEstado')->references('id')->on('estados');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('estado_id')->references('id')->on('estados');
         });
     }
 

@@ -8,8 +8,8 @@ use Faker\Generator as Faker;
 $factory->define(Comentarios::class, function (Faker $faker) {
     return [
         'comentario'=>$faker->text(30),
-        'idUsuario'=>rand(1,9),
-        'idPublicacion'=>rand(1,4),
-        'idEstado'=>1
+        'user_id'=>rand(1,9),
+        'publicaciones_id'=>rand(1,4),
+        'estado_id'=>1
     ];
 });

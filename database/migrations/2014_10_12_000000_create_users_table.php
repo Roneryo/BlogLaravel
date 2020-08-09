@@ -29,11 +29,11 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
 
-            $table->unsignedBigInteger('idEstado');
-            $table->unsignedBigInteger('idTipoUsuario');
+            $table->unsignedBigInteger('estado_id');
+            $table->unsignedBigInteger('tipousuario_id');
 
-            $table->foreign('idEstado')->references('id')->on('estados');
-            $table->foreign('idTipoUsuario')->references('id')->on('tipoUsuario');
+            $table->foreign('estado_id')->references('id')->on('estados');
+            $table->foreign('tipousuario_id')->references('id')->on('tipoUsuario');
         });
     }
 
